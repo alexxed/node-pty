@@ -10,7 +10,7 @@
   "types": "./typings/node-pty.d.ts",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Tyriar/node-pty.git"
+    "url": "git://github.com/alexxed/node-pty.git"
   },
   "files": [
     "binding.gyp",
@@ -20,9 +20,9 @@
     "deps/",
     "typings/"
   ],
-  "homepage": "https://github.com/Tyriar/node-pty",
+  "homepage": "https://github.com/alexxed/node-pty",
   "bugs": {
-    "url": "https://github.com/Tyriar/node-pty/issues"
+    "url": "https://github.com/alexxed/node-pty/issues"
   },
   "keywords": [
     "pty",
@@ -36,14 +36,15 @@
     "tsc": "tsc",
     "watch": "tsc -w",
     "lint": "tslint 'src/**/*.ts'",
-    "install": "node scripts/install.js",
+    "install": "npx prebuild-install || node scripts/install.js",
     "postinstall": "node scripts/post-install.js",
     "test": "cross-env NODE_ENV=test mocha -R spec --exit lib/*.test.js",
     "prepare": "npm run tsc",
     "prepublishOnly": "npm run tsc"
   },
   "dependencies": {
-    "nan": "^2.14.0"
+    "nan": "^2.14.0",
+    "prebuild-install": "^5.2.5"
   },
   "devDependencies": {
     "@types/mocha": "^5.0.0",
